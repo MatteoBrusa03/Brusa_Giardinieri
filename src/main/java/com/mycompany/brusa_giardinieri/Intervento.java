@@ -21,6 +21,35 @@ public class Intervento
     private LocalDateTime dataInizioIntervento;
     private LocalDateTime dataFineIntervento;
 
+    public Intervento(int CI, String nomeCliente, String indirizzoCliente, String nomeGiardiniere, String cognomeGiardiniere,int anno,int mese,int giorno,int ora,int minuto) 
+    {
+      this.CI=CI;
+      this.nomeCliente=nomeCliente;
+      this.indirizzoCliente=indirizzoCliente;
+      this.nomeGiardiniere=nomeGiardiniere;
+      this.cognomeGiardiniere=cognomeGiardiniere;
+      dataInizioIntervento=LocalDateTime.of(anno,mese,giorno,ora,minuto);
+      dataFineIntervento=null;
+    }
+    public Intervento(Intervento i)
+    {
+       CI=i.getCI();
+       nomeCliente=i.getNomeCliente();
+       indirizzoCliente=i.getIndirizzoCliente();
+       nomeGiardiniere=i.getNomeGiardiniere();
+       cognomeGiardiniere=i.getCognomeGiardiniere();
+       dataInizioIntervento=LocalDateTime.from(i.getDataInizioIntervento());
+    }
+    public Intervento()
+    {
+        CI=0;
+        nomeCliente=" ";
+        indirizzoCliente=" ";
+        nomeGiardiniere=" ";
+        cognomeGiardiniere=" ";
+        dataInizioIntervento=LocalDateTime.now();
+    }
+    
     public int getCI() 
     {
         return CI;
@@ -91,5 +120,13 @@ public class Intervento
       String s;
       s="CI: "+getCI()+" nome cliente: "+getNomeCliente()+" indirizzo cliente: "+getIndirizzoCliente()+" nome giardiniere: "+getNomeGiardiniere()+" cognome giardiniere: "+getCognomeGiardiniere()+" data inizio intervento:"+getDataInizioIntervento();
       return s;
+    }
+    
+    public boolean equals(Object o)
+    {
+      Intervento intervento;
+      //Intervento=(intervento)o;
+      
+      return false;
     }
 }

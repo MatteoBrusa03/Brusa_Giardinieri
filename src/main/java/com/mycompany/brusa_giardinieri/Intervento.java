@@ -122,11 +122,14 @@ public class Intervento
       return s;
     }
     
-    public boolean equals(Object o)
+    public boolean Equals(Object o)
     {
       Intervento intervento;
-      //Intervento=(intervento)o;
+      intervento=(Intervento)o;
+      if(this.getCI()==intervento.getCI() && this.nomeCliente.compareToIgnoreCase(intervento.getNomeCliente())==0 && this.indirizzoCliente.compareToIgnoreCase(intervento.getIndirizzoCliente())==0  && this.nomeGiardiniere.compareToIgnoreCase(intervento.getNomeGiardiniere())==0 && this.cognomeGiardiniere.compareToIgnoreCase(intervento.getCognomeGiardiniere())==0 && this.dataInizioIntervento.isEqual(intervento.getDataInizioIntervento()) && this.dataFineIntervento.isEqual(intervento.getDataFineIntervento()))
+              return true;
       
-      return false;
+      else
+          return false;
     }
 }

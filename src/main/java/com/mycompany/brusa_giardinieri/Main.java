@@ -17,6 +17,7 @@ public class Main
     {
        int sceltaUtente;
        Scanner tastiera=new Scanner(System.in);
+       Intervento intervento;
         
        String[] vociMenu=new String[8]; 
        vociMenu[0]="Esci";
@@ -44,10 +45,7 @@ public class Main
               
              case 1:
              {
-                 Intervento i1=new Intervento(1, "Pino", "via x", "Gianni", "Pierone", 2000, 12, 1, 12, 30);
-                 Intervento i2=new Intervento(1, "Pino", "via x", "Gianni", "Pierone", 2000, 12, 1, 12, 30);
                  
-                 i1.Equals(i2);
                  
                  System.out.println("Operazione ok");
                  System.out.println("Premi un pulsante per continuare");

@@ -5,6 +5,7 @@
  */
 package com.mycompany.brusa_giardinieri;
 
+import java.time.*;
 import java.util.*;
 
 /**
@@ -18,6 +19,12 @@ public class Main
        int sceltaUtente;
        Scanner tastiera=new Scanner(System.in);
        Intervento intervento;
+       String nomeCliente;
+       String indirizzoCliente;
+       String nomeGiardiniere;
+       String cognomeGiardiniere;
+       int anno,mese,giorno,ora,minuto;
+       
         
        String[] vociMenu=new String[8]; 
        vociMenu[0]="Esci";
@@ -45,8 +52,26 @@ public class Main
               
              case 1:
              {
-                 
-                 
+                 System.out.println("Aggiungi Prenotazione: ");
+                 System.out.println("Nome del cliente --> ");
+                 nomeCliente=tastiera.nextLine();
+                 System.out.println("Indirizzo del cliente --> ");
+                 indirizzoCliente=tastiera.nextLine();
+                 System.out.println("Nome del giardiniere --> ");
+                 nomeGiardiniere=tastiera.nextLine();
+                 System.out.println("Cognome del giardiniere --> ");
+                 cognomeGiardiniere=tastiera.nextLine();
+                 //LocalDateTime per l'inizio dell'intervento
+                 System.out.println("Anno prenotazione --> ");
+                 anno=tastiera.nextInt();
+                 System.out.println("Mese prenotazione --> ");
+                 mese=tastiera.nextInt();
+                 System.out.println("Giorno prenotazione --> ");
+                 giorno=tastiera.nextInt();
+                 System.out.println("Ora prenotazione --> ");
+                 ora=tastiera.nextInt();
+                 System.out.println("Minuto prenotazione --> ");
+                 minuto=tastiera.nextInt();
                  System.out.println("Operazione ok");
                  System.out.println("Premi un pulsante per continuare");
                  tastiera.nextLine();

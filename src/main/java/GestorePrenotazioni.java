@@ -1,3 +1,6 @@
+
+import com.mycompany.brusa_giardinieri.Intervento;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,29 +11,19 @@
  *
  * @author matte
  */
-public class Prenotazione 
+public class GestorePrenotazioni 
 {
     private Intervento[] prenotazioni;
     private static int NUM_MAX_PRENOTAZIONI=100;
+    private int nPrenotazioni=0;
     
     //Costruttore.
-    public Prenotazione()
+    public GestorePrenotazioni()
     {
         prenotazioni=new Intervento[NUM_MAX_PRENOTAZIONI];
     }
     
-    //Costruttore di copia.
-    public Prenotazione(Intervento Int)
-    {
-        prenotazioni=new Intervento[NUM_MAX_PRENOTAZIONI];
-        
-        for(int i=0;i<getNumMaxPrenotazioni();i++)
-        {
-            prenotazioni[i]=Int.getVolume(i);
-        }
-    }
-    
-    public Prenotazione(Intervento[] prenotazioni)
+    public GestorePrenotazioni(Intervento[] prenotazioni)
     {
         prenotazioni=new Intervento[NUM_MAX_PRENOTAZIONI];
         
@@ -57,5 +50,11 @@ public class Prenotazione
     public static int getNumMaxPrenotazioni()
     {
         return NUM_MAX_PRENOTAZIONI;
+    }
+    
+     public void aggiungiIntervento(Intervento intervento)
+    {
+        prenotazioni[nPrenotazioni]=new Intervento(intervento);  
+        nPrenotazioni++;
     }
 }

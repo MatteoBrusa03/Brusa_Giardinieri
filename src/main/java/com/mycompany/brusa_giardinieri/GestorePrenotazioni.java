@@ -71,14 +71,19 @@ public class GestorePrenotazioni
         nPrenotazioni++;
     }
      
-    public void esportaPrenotazioniCSV(String filePathName) throws IOException, FileException
+    public Intervento getPrentazione(int nPrenotazioni)
+   {
+        return(prenotazioni[nPrenotazioni]);
+   }
+     
+     public void esportaPrenotazioniCSV(String filePathName) throws IOException, FileException
     {
       Intervento intervento;
       String stringaLibro;
       TextFile f1= new TextFile(filePathName, 'W');
       for (int i=0;i<getNPrenotazioni();i++)
       {
-             intervento=getPrenotazione();
+             intervento=getPrenotazione(nPrenotazioni);
              if (intervento!=null)
              {
                 stringaLibro=i+";"+intervento.getCI()+";"+intervento.getNomeCliente()+";"+intervento.getIndirizzoCliente()+";"+intervento.getNomeGiardiniere()+";"+intervento.getCognomeGiardiniere()+";"+intervento.getDataInizioIntervento()+";"+intervento.getDataFineIntervento()+";";

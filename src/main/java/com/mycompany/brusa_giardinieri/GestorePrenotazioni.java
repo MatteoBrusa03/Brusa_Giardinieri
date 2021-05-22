@@ -65,13 +65,23 @@ public class GestorePrenotazioni
         return nPrenotazioni;
     }
     
-     public void aggiungiIntervento(Intervento intervento)
+    public void aggiungiIntervento(Intervento intervento)
     {
         prenotazioni[nPrenotazioni]=new Intervento(intervento);  
         nPrenotazioni++;
     }
+    
+    public String visualizzaInterventi()
+    {
+        String s="";
+        for(int i=0; i<nPrenotazioni; i++)
+        {
+           s+=prenotazioni[i].toString()+"/n";
+        }
+        return s;
+    }
      
-    public Intervento getPrentazione(int nPrenotazioni)
+    public Intervento getPrenotazione(int nPrenotazioni)
    {
         return(prenotazioni[nPrenotazioni]);
    }

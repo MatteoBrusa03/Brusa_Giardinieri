@@ -13,6 +13,7 @@ import java.time.*;
  */
 public class Intervento 
 {
+    private static int contatore=0;
     private int CI;
     private String nomeCliente;
     private String indirizzoCliente;
@@ -23,13 +24,14 @@ public class Intervento
 
     public Intervento(int CI, String nomeCliente, String indirizzoCliente, String nomeGiardiniere, String cognomeGiardiniere,int anno,int mese,int giorno,int ora,int minuto) 
     {
-      this.CI=CI;
+      this.CI=contatore;
       this.nomeCliente=nomeCliente;
       this.indirizzoCliente=indirizzoCliente;
       this.nomeGiardiniere=nomeGiardiniere;
       this.cognomeGiardiniere=cognomeGiardiniere;
       dataInizioIntervento=LocalDateTime.of(anno,mese,giorno,ora,minuto);
       dataFineIntervento=null;
+     contatore++;
     }
     public Intervento(Intervento i)
     {
@@ -53,11 +55,6 @@ public class Intervento
     public int getCI() 
     {
         return CI;
-    }
-
-    public void setCI(int CI) 
-    {
-        this.CI = CI;
     }
 
     public String getNomeCliente() 

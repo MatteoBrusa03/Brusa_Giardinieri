@@ -27,6 +27,7 @@ public class Main
        String nomeGiardiniere;
        String cognomeGiardiniere;
        int anno,mese,giorno,ora,minuto;
+       int CI=0;
        String caricamentoDaFileOK;
        String nomeFileTesto="Giardinieri.txt";
        String nomeFileBinario="Prenotazioni.bin";
@@ -93,6 +94,8 @@ public class Main
                    ora=tastiera.nextInt();
                    System.out.println("Minuto prenotazione --> ");
                    minuto=tastiera.nextInt();
+                   Intervento i1=new Intervento(CI, nomeCliente, indirizzoCliente, nomeGiardiniere, cognomeGiardiniere, anno, mese, giorno, ora, minuto);
+                   g1.aggiungiIntervento(i1);
                    System.out.println("Operazione ok");
                    System.out.println("Premi un pulsante per continuare");
                    tastiera.nextLine();
@@ -101,6 +104,8 @@ public class Main
 
                 case 2:
                 {
+                    System.out.println(g1.visualizzaInterventi());
+                   
                    System.out.println("Operazione ok");
                    System.out.println("Premi un pulsante per continuare");
                    tastiera.nextLine();

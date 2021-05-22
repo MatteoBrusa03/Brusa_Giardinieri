@@ -28,6 +28,8 @@ public class Main
        String cognomeGiardiniere;
        int anno,mese,giorno,ora,minuto;
        int CI=0;
+       int sceltaTerminazione;
+       int sceltaEliminazione;
        String caricamentoDaFileOK;
        String nomeFileTesto="Giardinieri.txt";
        String nomeFileBinario="Prenotazioni.bin";
@@ -104,9 +106,22 @@ public class Main
 
                 case 2:
                 {
-                    System.out.println(g1.visualizzaInterventi());
-                   
-                   System.out.println("Operazione ok");
+                   System.out.println(g1.visualizzaInterventi());
+                   System.out.println("Scegli l'operazione che desideri terminare: ");
+                   sceltaTerminazione=tastiera.nextInt();
+                   System.out.println("Anno fine prenotazione --> ");
+                   anno=tastiera.nextInt();
+                   System.out.println("Mese fine prenotazione --> ");
+                   mese=tastiera.nextInt();
+                   System.out.println("Giorno fine prenotazione --> ");
+                   giorno=tastiera.nextInt();
+                   System.out.println("Ora fine prenotazione --> ");
+                   ora=tastiera.nextInt();
+                   System.out.println("Minuto fine prenotazione --> ");
+                   minuto=tastiera.nextInt();
+                   g1.terminaIntervento(sceltaTerminazione, anno, mese, giorno, ora, minuto);
+                   System.out.println(g1.visualizzaInterventi());
+                   System.out.println("Terminazione ok");
                    System.out.println("Premi un pulsante per continuare");
                    tastiera.nextLine();
                    break;
@@ -114,7 +129,12 @@ public class Main
 
                 case 3:
                 {
-                   System.out.println("Operazione ok");
+                   System.out.println(g1.visualizzaInterventi());
+                   System.out.println("Scegli l'operazione che desideri eliminare: ");
+                   sceltaEliminazione=tastiera.nextInt();
+                   g1.eliminaPrenotazione(sceltaEliminazione);
+                   System.out.println(g1.visualizzaInterventi());
+                   System.out.println("Eliminazione ok");
                    System.out.println("Premi un pulsante per continuare");
                    tastiera.nextLine();
                    break;

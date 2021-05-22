@@ -31,7 +31,7 @@ public class Intervento
       this.cognomeGiardiniere=cognomeGiardiniere;
       dataInizioIntervento=LocalDateTime.of(anno,mese,giorno,ora,minuto);
       dataFineIntervento=null;
-     contatore++;
+      contatore++;
     }
     public Intervento(Intervento i)
     {
@@ -102,9 +102,9 @@ public class Intervento
         return dataInizioIntervento;
     }
 
-    public void setDataInizioIntervento(LocalDateTime dataInizioIntervento,int anno,int mese,int giorno,int ora,int minuto) 
+    public void setDataInizioIntervento(int anno,int mese,int giorno,int ora,int minuto) 
     {
-        dataInizioIntervento.of(anno,mese,giorno,ora,minuto);
+        dataInizioIntervento=LocalDateTime.of(anno,mese,giorno,ora,minuto);
     }
 
     public LocalDateTime getDataFineIntervento() 
@@ -112,10 +112,15 @@ public class Intervento
         return dataFineIntervento;
     }
     
+    public void setDataFineIntervento(int anno,int mese,int giorno,int ora,int minuto) 
+    {
+        dataFineIntervento=LocalDateTime.of(anno,mese,giorno,ora,minuto);
+    }
+    
     public String toString()
     {
       String s;
-      s="CI: "+getCI()+" nome cliente: "+getNomeCliente()+" indirizzo cliente: "+getIndirizzoCliente()+" nome giardiniere: "+getNomeGiardiniere()+" cognome giardiniere: "+getCognomeGiardiniere()+" data inizio intervento:"+getDataInizioIntervento();
+      s="CI: "+getCI()+" nome cliente: "+getNomeCliente()+" indirizzo cliente: "+getIndirizzoCliente()+" nome giardiniere: "+getNomeGiardiniere()+" cognome giardiniere: "+getCognomeGiardiniere()+" data inizio intervento:"+getDataInizioIntervento()+" data fine intervento: "+getDataFineIntervento();
       return s;
     }
     

@@ -71,12 +71,25 @@ public class GestorePrenotazioni
         nPrenotazioni++;
     }
     
+    public void terminaIntervento(int scelta1,int anno,int mese,int giorno,int ora,int minuto)
+    {
+        prenotazioni[scelta1].setDataFineIntervento(anno,mese,giorno,ora,minuto);
+    }
+    
+    public void eliminaPrenotazione(int sceltaEliminazione)
+    {
+       prenotazioni[sceltaEliminazione]=null;
+    }
+    
     public String visualizzaInterventi()
     {
         String s="";
         for(int i=0; i<nPrenotazioni; i++)
         {
-           s+=prenotazioni[i].toString()+"/n";
+           if(prenotazioni[i]!=null)
+           {
+             s+=prenotazioni[i].toString()+"\n";
+           }  
         }
         return s;
     }

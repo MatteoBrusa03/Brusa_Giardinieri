@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.time.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -30,6 +31,20 @@ public class GestorePrenotazioni
     {
         prenotazioni=new Intervento[NUM_MAX_PRENOTAZIONI];
     }
+    
+    //scambia vettori
+   public void scambia(int posizione1,int posizione2)
+   {
+     Intervento c;
+     c=prenotazioni[posizione1];
+     prenotazioni[posizione1]=prenotazioni[posizione2];
+     prenotazioni[posizione2]=c;
+     
+     int i;
+     i=prenotazioni[posizione1].getCI();
+     prenotazioni[posizione1].setCI(prenotazioni[posizione2].getCI());
+     prenotazioni[posizione2].setCI(i);
+   }
     
     public GestorePrenotazioni(Intervento[] prenotazioni)
     {
@@ -92,6 +107,36 @@ public class GestorePrenotazioni
            }  
         }
         return s;
+    }
+    
+    public String visualizzaInterventiPerData(int anno,int mese,int giorno)
+    {
+        String s="";
+        LocalDate dataRicerca=LocalDate.of(anno, mese, giorno);
+        for(int i=0; i<nPrenotazioni; i++)
+        {
+           if(prenotazioni[i]!=null && prenotazioni[i].getDataInizioIntervento().toLocalDate().compareTo(dataRicerca)==0)
+           {
+             s+=prenotazioni[i].toString()+"\n";
+           }  
+        }
+        return s;
+    }
+    
+     public void ordinaInterventiDescrescente()
+    {
+        //selection sort decrescente
+        for(int i=0;i<prenotazioni.length-1;i++)
+        {
+          for(int j=i+1;j<prenotazioni.length;j++)
+          {
+             if(prenotazioni[j]!=null && prenotazioni[i]!=null)
+             {
+                if(prenotazioni[j].getDataInizioIntervento().compareTo(prenotazioni[i].getDataInizioIntervento())>0)
+                   scambia(i,j);
+             }
+          }
+        }
     }
      
     public Intervento getPrenotazione(int nPrenotazioni)

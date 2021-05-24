@@ -56,6 +56,11 @@ public class Intervento
     {
         return CI;
     }
+    
+    public void setCI(int c) 
+    {
+         this.CI = c;
+    }
 
     public String getNomeCliente() 
     {
@@ -124,7 +129,7 @@ public class Intervento
       return s;
     }
     
-    public boolean Equals(Object o)
+    public boolean equals(Object o)
     {
       Intervento intervento;
       intervento=(Intervento)o;

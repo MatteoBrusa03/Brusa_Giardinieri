@@ -142,6 +142,15 @@ public class Main
 
                 case 4:
                 {
+                   System.out.println("Inserisci la data che vuoi cercare: ");
+                   System.out.println("");
+                   System.out.println("Anno inizio prenotazione da cercare --> ");
+                   anno=tastiera.nextInt();
+                   System.out.println("Mese inizio prenotazione da cercare --> ");
+                   mese=tastiera.nextInt();
+                   System.out.println("Giorno inizo prenotazione da cercare --> ");
+                   giorno=tastiera.nextInt();
+                   System.out.println(g1.visualizzaInterventiPerData(anno, mese, giorno));
                    System.out.println("Operazione ok");
                    System.out.println("Premi un pulsante per continuare");
                    tastiera.nextLine();
@@ -150,6 +159,8 @@ public class Main
 
                 case 5:
                 {
+                   g1.ordinaInterventiDescrescente();
+                    System.out.println(g1.visualizzaInterventi());
                    System.out.println("Operazione ok");
                    System.out.println("Premi un pulsante per continuare");
                    tastiera.nextLine();

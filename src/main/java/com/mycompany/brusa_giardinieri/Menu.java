@@ -44,6 +44,7 @@ public class Menu
       {
         visualizzaMenu();
         System.out.println("Scelta ---> ");
+        System.out.println("");
         inputUtente=tastiera.nextLine();
 
         inputUtenteOk=true;

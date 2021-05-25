@@ -52,7 +52,7 @@ public class GestorePrenotazioni
         
         int numeroPrenotazioni=0;
         
-        //se elencoLibri non contiene libri.
+        //se prenotazioni non contiene interventi.
         if(prenotazioni.length==0)
             return;
         
